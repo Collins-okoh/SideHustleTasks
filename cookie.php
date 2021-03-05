@@ -29,7 +29,7 @@ $cookie_time = time() + (86400 * 30);
 setcookie($cookie_name, $cookie_value, $cookie_time, "/");
 
 if (!isset($_COOKIE[$cookie_name])) {
-	echo "Hello and welcome ". $cookie_value . ", nice to meet you!";
+	echo "<br><br>Hello and welcome ". $cookie_value . ", nice to meet you!";
 
 }else {
 	echo "Welcome back, ". $cookie_value;
