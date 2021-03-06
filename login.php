@@ -18,11 +18,13 @@
 
 		form {
 			margin-left: 5%;
+			padding-top: 5%;
 		}
 
 		h1 {
 			text-align: center;
 			text-transform: small-caps;
+			margin-bottom: 5%;
 		}
 
 		input {
@@ -38,48 +40,43 @@
 			width: 40%;
 			margin-left: 27%;
 			outline: none;
-			margin-bottom: 30px;
+			margin-bottom: 10px;
 			/*margin-bottom: 20px;*/
 		}
 
 		p {
 			text-align: center;
 		}
-
 	</style>
-	<title>Cookie</title>
+	<title>Login</title>
 </head>
 <body>
 	<section class="main">
-		<form method="post" action="cookie.php">
-			<h1>Sign Up</h1>
-			<input type="text" placeholder="Firstname"  name="user_firstname"><br><br>
-			<input type="text"  placeholder="Lastname" name="user_lastname"><br><br>
+		<form action="cookie.php" method="post">
+ 			<h1>Login</h1>
 			<input type="email" placeholder="Email Address" name="user_email"><br><br>
 			<input type="password" placeholder="Password"  name="user_password"><br><br>
-			<input type="submit" name="submit" value="Sign Up">	
-			<p>Already have an account? <span><a href="cookie.php">Login</a></span></p>
+			<input type="submit" name="submit" value="Login">	
+			<p>Back to <a href="cookie.php">sign up?</a></p>
 		</form>
 	</section>
 
-
 <?php
 
-$firstname = $_POST[user_firstname];
-$lastname = $_POST[user_lastname];
-$email= $_POST[user_email];
+//$firstname = $_POST[user_firstname];
+//$lastname = $_POST[user_lastname];
+$email = $_POST[user_email];
 $password = $_POST[user_password];
 
 
 $cookie_name = "user";
-$cookie_value = $firstname;
+$cookie_value = $email;
 $cookie_time = time() + (86400 * 30);
 
 setcookie($cookie_name, $cookie_value, $cookie_time, "/");
 
 if (isset($_COOKIE[$cookie_name]) ) {
 	echo "<br><br>Welcome back, ". $cookie_value;
-
 }else {
 	echo "<br><br>Hello and welcome, nice to meet you!";
 }
