@@ -52,12 +52,12 @@
 </head>
 <body>
 	<section class="main">
-		<form action="cookie.php" method="post">
+		<form action="index.php" method="post">
  			<h1>Login</h1>
 			<input type="email" placeholder="Email Address" name="user_email"><br><br>
 			<input type="password" placeholder="Password"  name="user_password"><br><br>
 			<input type="submit" name="submit" value="Login">	
-			<p>Back to <a href="cookie.php">sign up?</a></p>
+			<p>Back to <a href="index.php">sign up?</a></p>
 		</form>
 	</section>
 
