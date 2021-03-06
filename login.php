@@ -52,7 +52,7 @@
 </head>
 <body>
 	<section class="main">
-		<form action="index.php" method="post">
+		<form action="login.php" method="post">
  			<h1>Login</h1>
 			<input type="email" placeholder="Email Address" name="user_email"><br><br>
 			<input type="password" placeholder="Password"  name="user_password"><br><br>

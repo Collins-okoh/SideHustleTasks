@@ -51,13 +51,13 @@
 </head>
 <body>
 	<section class="main">
-		<form method="post" action="index.php">
+		<form method="post" action="login.php">
 			<h1>Sign Up</h1>
 			<input type="text" placeholder="Firstname"  name="user_firstname"><br><br>
 			<input type="text"  placeholder="Lastname" name="user_lastname"><br><br>
 			<input type="email" placeholder="Email Address" name="user_email"><br><br>
 			<input type="password" placeholder="Password"  name="user_password"><br><br>
-			<input type="submit" name="submit" value="Sign Up">	
+			<a href="login.php"><input type="submit" name="submit" value="Sign Up"></a>	
 			<p>Already have an account? <span><a href="login.php">Login</a></span></p>
 		</form>
 	</section>
