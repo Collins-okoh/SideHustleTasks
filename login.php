@@ -54,8 +54,8 @@
 	<section class="main">
 		<form action="login.php" method="post">
  			<h1>Login</h1>
-			<input type="email" placeholder="Email Address" name="user_email"><br><br>
-			<input type="password" placeholder="Password"  name="user_password"><br><br>
+			<input type="email" placeholder="Email Address" name="user_email" required><br><br>
+			<input type="password" placeholder="Password"  name="user_password" required><br><br>
 			<input type="submit" name="submit" value="Login">	
 			<p>Back to <a href="index.php">sign up?</a></p>
 		</form>
@@ -68,18 +68,27 @@
 $email = $_POST[user_email];
 $password = $_POST[user_password];
 
+session_start();
 
-$cookie_name = "user";
-$cookie_value = $email;
-$cookie_time = time() + (86400 * 30);
+$_SESSION['user'] = $email;
 
-setcookie($cookie_name, $cookie_value, $cookie_time, "/");
 
-if (isset($_COOKIE[$cookie_name]) ) {
-	echo "<br><br>Welcome back, ". $cookie_value;
+if ($user_name == $email) {
+	echo "<br><br>Welcome back, ".$_SESSION['user'];
 }else {
-	echo "<br><br>Hello and welcome, nice to meet you!";
+	echo "<br><br>Invalid login details";
 }
+// $cookie_name = "user";
+// $cookie_value = $email;
+// $cookie_time = time() + (86400 * 30);
+
+// setcookie($cookie_name, $cookie_value, $cookie_time, "/");
+
+// if (isset($_COOKIE[$cookie_name]) ) {
+// 	echo "<br><br>Welcome back, ". $cookie_value;
+// }else {
+// 	echo "<br><br>Hello and welcome, nice to meet you!";
+// }
 
 ?>
 </body>
