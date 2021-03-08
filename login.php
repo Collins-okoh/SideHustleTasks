@@ -52,7 +52,7 @@
 </head>
 <body>
 	<section class="main">
-		<form action="login.php" method="post">
+		<form action="welcome.php" method="post">
  			<h1>Login</h1>
 			<input type="email" placeholder="Email Address" name="user_email" required><br><br>
 			<input type="password" placeholder="Password"  name="user_password" required><br><br>
@@ -63,17 +63,20 @@
 
 <?php
 
+session_start();
 //$firstname = $_POST[user_firstname];
 //$lastname = $_POST[user_lastname];
 $email = $_POST[user_email];
 $password = $_POST[user_password];
-
-session_start();
+$user_name = $_POST[user_email];
+$pwd = $_POST[user_password];
 
 $_SESSION['user'] = $email;
 
-
-if ($user_name == $email) {
+if (isset($_SESSION['user'])) {
+	echo "<br><br>Welcome back, ".$_SESSION['user'];
+	echo "<a href='welcome.php'>Welcome</a>";
+}else if ($user_name == $email && $pwd == $password) {
 	echo "<br><br>Welcome back, ".$_SESSION['user'];
 }else {
 	echo "<br><br>Invalid login details";

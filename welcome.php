@@ -4,7 +4,9 @@
 	<title>Welcome</title>
 </head>
 <body>
-	<h2>Welcome to your dashboard</h2>
-	<p><a href="login.php">Back to login</a></p>
+	<form action="login.php" method="post">
+		<h2>Welcome to your dashboard</h2>
+		<input type="submit" name="submit" value="Logout">
+	</form>
 </body>
 </html>

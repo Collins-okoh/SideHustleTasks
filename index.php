@@ -51,7 +51,7 @@
 </head>
 <body>
 	<section class="main">
-		<form method="post" action="welcome.php">
+		<form method="post" action="login.php">
 			<h1>Sign Up</h1>
 			<input type="text" placeholder="Firstname"  name="user_firstname" required><br><br>
 			<input type="text"  placeholder="Lastname" name="user_lastname" required><br><br>
@@ -65,10 +65,18 @@
 
 <?php
 
+session_start();
+
 $firstname = $_POST[user_firstname];
 $lastname = $_POST[user_lastname];
 $email= $_POST[user_email];
 $password = $_POST[user_password];
+
+$_SESSION['user'] = $email;
+
+if (isset($_SESSION['user'])) {
+	echo "<a href='login.php'>Go To Login</a>";
+}
 
 
 // $cookie_name = "user";
